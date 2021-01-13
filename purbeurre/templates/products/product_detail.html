@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+        {% block title %} {{ product.name }}{% endblock title %}
+{% block content %}
+<br><br>
+<br><br>
+
+<div class="card-group mt-2 pt-2">
+<div class="card text-center mb-3 col--6 mt-2 pt-2">
+
+          <div class="card-header mt-2 pt-2 ">
+
+            <strong>Nutriscore:</strong> {{ product.nutriscore_grade|upper }}
+          </div>
+          <div class="card-body bg-grey">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <img
+              height="180px"
+              src="{{ product.image_url }}"
+              class="pb-3 mb-3 mt-4"
+              alt=""
+            /><br />
+            <a href="{{ product.url }}" class="btn btn-primary mt-2 pt-2"
+              >Ficher produit sur OpenFoodFact</a
+            >
+
+          </div>
+        </div>
+</div>
+<br><br><br><br><br><br>
+{% endblock content %}
