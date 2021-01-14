@@ -1,0 +1,13 @@
+language: python
+python:
+  - '3.8'
+
+env: DJANGO_SETTINGS_MODULE="config.settings.local"
+
+services:
+  - postgresql
+
+script:
+  - pytest
+  - black . --check
+  - isort . --check
