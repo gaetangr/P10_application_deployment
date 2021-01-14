@@ -1,4 +1,4 @@
-![Pur Beurre Build](https://github.com/gaetangr/P7_prometheus/workflows/Prometheus%20Build/badge.svg) ![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)
+[![Build Status](https://travis-ci.com/gaetangr/P11_application_deployment.svg?branch=master)](https://travis-ci.com/gaetangr/P11_application_deployment)
 
 # ✨ Pur Beurre ✨
 
