@@ -1,17 +1,29 @@
+name: CI 
 language: python
 python:
-  - '3.8'
+  - "3.7"      
+  - "3.8" # Current default Python version for the project
+  - "3.9"
 
 env: DJANGO_SETTINGS_MODULE="config.settings.local"
 
-# command to install dependencies
+# Update PIP
+before_install:
+  - python -m pip install --upgrade pip
+# Install dependecies from local requirements
 install:
   - pip install -r requirements/local.txt
 
 services:
   - postgresql
 
-script:
-  - pytest
-  - black . --check
-  - isort . --check
+jobs:
+  include:
+  - name: Linting and formating
+    script: 
+    - black .
+    - isort .
+  
+  - name: Running tests
+    script: 
+    - pytest
