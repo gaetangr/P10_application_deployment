@@ -1,3 +1,4 @@
+name: CI 
 language: python
 python:
   - "3.7"      
@@ -16,13 +17,7 @@ install:
 services:
   - postgresql
 
-jobs:
-  include:
-  - name: Linting and formating
-    script: 
-    - black .
-    - isort .
-  
-  - name: Running tests
-    script: 
-    - pytest
+script:
+  - pytest
+  - black .
+  - isort .
